@@ -1,14 +1,15 @@
-﻿namespace NumbersGame
+﻿using System;
+
+namespace NumbersGame
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen! Jag tänker på ett nummer mellan 1-20. Kan du gissa vilket? Du får fem försök.");
+            startup();
 
             Random random = new Random();
             int number = random.Next(1, 20);
-
             int triesLimit = 5;
             int tries = 0;
             int guess = 0;
@@ -35,7 +36,11 @@
             {
                 Console.WriteLine("Tyvärr, du lyckades inte gissa talet på fem försök!");
             }
-            Console.ReadLine();
         }
+     static void startup()
+        {
+            Console.WriteLine("Välkommen! Jag tänker på ett nummer mellan 1-20. Kan du gissa vilket? Du får fem försök.");
+        }
+
     }
 }
